@@ -4,7 +4,7 @@ import { TabRoutes } from './src/routes/BottomTabNavigator/BottonTabNavigator';
 export default function App() {
   return (
     <>
-      <StatusBar style="auto" />
+      <StatusBar style="inverted" />
       <TabRoutes />
     </>
   );
