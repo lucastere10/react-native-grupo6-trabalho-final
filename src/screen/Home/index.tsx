@@ -1,4 +1,4 @@
-import { View, Text, Image, SafeAreaView, FlatList } from "react-native"
+import { View, Text, Image, SafeAreaView, FlatList, ScrollView } from "react-native"
 import { styles } from "./style"
 import { CategoryCard } from "../../components/CategoryCard"
 import { ProductCard } from "../../components/ProductCard"
@@ -10,33 +10,37 @@ export const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.containerUpper}>
-        <Image style={{marginTop:30}} source={require("../../assets/images/ShoinLogo.png")}></Image>
+        <Image style={{ marginTop: 30 }} source={require("../../assets/images/ShoinLogo.png")}></Image>
       </View>
       <View style={styles.containerLower}>
         <Text style={styles.text}>Em Destaque</Text>
       </View>
-      <View style={styles.containerCard}>
-        <CategoryCard />
-      </View>
-      <View style={styles.containerProducts}>
-        <Text style={styles.title}>Produtos</Text>
-        <View style={{flexDirection:'row', gap:10 }}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+      <ScrollView>
+
+        <View style={styles.containerCard}>
+          <CategoryCard />
         </View>
-        <View style={{flexDirection:'row', gap:10 }}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+        <View style={styles.containerProducts}>
+          <Text style={styles.title}>Produtos</Text>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </View>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
+          </View>
         </View>
-      </View>
-      <View style={styles.containerLowerCard}>
-        <LowerCard></LowerCard>
-        <LowerCard></LowerCard>
-      </View>
+        <View style={styles.containerLowerCard}>
+          <LowerCard></LowerCard>
+          <LowerCard></LowerCard>
+        </View>
+        <View style={{marginBottom:80}}></View>
+      </ScrollView>
     </SafeAreaView>
   )
 }
