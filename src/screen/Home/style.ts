@@ -18,6 +18,7 @@ export const styles = StyleSheet.create({
         height:40
     },
     containerCard:{
+        marginTop:20,
         justifyContent:'center',
         alignItems:"center"
     },

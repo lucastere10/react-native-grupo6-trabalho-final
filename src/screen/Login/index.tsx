@@ -8,7 +8,7 @@ export const Login = () => {
   const [password, setPassword] = useState('');
 
   return (
-    <ImageBackground source={require('../../assets/loginBackground.png')} style={styles.backgroundImage}>
+    <ImageBackground source={require('../../assets/images/loginBackground.png')} style={styles.backgroundImage}>
       <View style={styles.container}>
        
        <View style={styles.input}>
@@ -18,7 +18,8 @@ export const Login = () => {
           placeholder="Nome"
           value={username}
           onChangeText={(text) => setUsername(text)}
-        /> <View></View>
+        />
+        <View></View>
         </View>
         
         <View style={styles.input}>

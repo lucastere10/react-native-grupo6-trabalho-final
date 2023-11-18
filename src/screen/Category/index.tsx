@@ -1,6 +1,6 @@
 import { View, Text, Image, SafeAreaView, FlatList, ScrollView } from "react-native"
 import { styles } from "./style"
-import { CategoryCard } from "../../components/CategoryCard"
+import { CardCategoria } from "../../components/cardCategoria"
 
 export const Category = () => {
   return (
@@ -13,12 +13,12 @@ export const Category = () => {
       </View>
       <ScrollView>
         <View style={styles.containerCards}>
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
-          <CategoryCard />
+          <CardCategoria />
+          <CardCategoria />
+          <CardCategoria />
+          <CardCategoria />
+          <CardCategoria />
+          <CardCategoria />
         </View>
         <View style={{marginBottom:200}}></View>
       </ScrollView>
