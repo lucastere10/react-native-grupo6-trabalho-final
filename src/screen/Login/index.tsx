@@ -10,17 +10,16 @@ export const Login = ({ navigation }) => {
   return (
     <ImageBackground source={require('../../assets/images/loginBackground.png')} style={styles.backgroundImage}>
       <View style={styles.container}>
-
-        <View style={styles.input}>
-          <Ionicons style={styles.icon} name="person-circle" size={28} color="#3F3335" />
-          <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
-            placeholder="Nome"
-            value={username}
-            onChangeText={(text) => setUsername(text)}
-          />
-          <View></View>
-        </View>
+       <View style={styles.input}>
+       <Ionicons style={styles.icon}   name="person-circle" size={28} color="#3F3335"  />
+        <TextInput
+          style={{textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight:30}}
+          placeholder="Nome"
+          value={username}
+          onChangeText={(text) => setUsername(text)}
+        />
+        <View></View>
+      </View>
 
         <View style={styles.input}>
           <FontAwesome style={styles.icon} name="unlock-alt" size={28} color="#3F3335" />

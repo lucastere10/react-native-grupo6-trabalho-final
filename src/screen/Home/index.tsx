@@ -1,8 +1,8 @@
 import { View, Text, Image, SafeAreaView, FlatList, ScrollView } from "react-native"
 import { styles } from "./style"
-import { CategoryCard } from "../../components/CategoryCard"
-import { ProductCard } from "../../components/ProductCard"
-import { LowerCard } from "../../components/LowerCard"
+import { CardCategoria } from "../../components/cardCategoria"
+import { CardEstacoes } from "../../components/cardEstacoes"
+import { CardProdutos } from "../../components/cardProdutos"
 
 export const Home = () => {
   const list = [1, 2, 3, 4, 5, 6, 7, 8]
@@ -18,26 +18,26 @@ export const Home = () => {
       <ScrollView>
 
         <View style={styles.containerCard}>
-          <CategoryCard />
+          <CardCategoria />
         </View>
         <View style={styles.containerProducts}>
           <Text style={styles.title}>Produtos</Text>
           <View style={{ flexDirection: 'row', gap: 10 }}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
           </View>
           <View style={{ flexDirection: 'row', gap: 10 }}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
+            <CardProdutos />
           </View>
         </View>
         <View style={styles.containerLowerCard}>
-          <LowerCard></LowerCard>
-          <LowerCard></LowerCard>
+          <CardEstacoes></CardEstacoes>
+          <CardEstacoes></CardEstacoes>
         </View>
         <View style={{marginBottom:80}}></View>
       </ScrollView>

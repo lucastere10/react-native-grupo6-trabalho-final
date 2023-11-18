@@ -4,16 +4,15 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home } from "../../screen/Home";
 import { Login } from "../../screen/Login";
-import { Register } from "../../screen/Register";
 import { Category } from "../../screen/Category";
 import { AntDesign, Entypo, FontAwesome, Ionicons } from '@expo/vector-icons';
-
+import { Register } from "../../screen/Register";
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
     Home: undefined;
-    Login: undefined;
+    Register: undefined;
     Category: undefined;
 }
 
@@ -65,8 +64,8 @@ export const TabRoutes = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="Login"
-                    component={Login}
+                    name="Register"
+                    component={Register}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
