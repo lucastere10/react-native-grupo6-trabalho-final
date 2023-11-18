@@ -3,7 +3,7 @@ import { View, TextInput, TouchableOpacity, ImageBackground, Text } from 'react-
 import { styles } from './style';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
-export const Register = (navigation) => {
+export const Register = ({navigation}) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -59,7 +59,11 @@ export const Register = (navigation) => {
             /><View></View>
         </View>
         
-        <TouchableOpacity style={styles.Botao} onPress={() => console.log('Realizar login')}>
+        <TouchableOpacity style={styles.Botao} onPress={() => {
+          console.log('Realizar login')
+          navigation.navigate('Login')
+          }
+          }>
           <Text style={{ color: 'white' }}>Cadastrar</Text>
         </TouchableOpacity>
       </View>

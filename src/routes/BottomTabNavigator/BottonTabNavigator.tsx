@@ -12,7 +12,7 @@ const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
     Home: undefined;
-    Register: undefined;
+    Login: undefined;
     Category: undefined;
 }
 
@@ -64,8 +64,8 @@ export const TabRoutes = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="Register"
-                    component={Register}
+                    name="Login"
+                    component={Login}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
