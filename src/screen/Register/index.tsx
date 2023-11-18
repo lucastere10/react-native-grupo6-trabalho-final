@@ -3,7 +3,7 @@ import { View, TextInput, TouchableOpacity, ImageBackground, Text } from 'react-
 import { styles } from './style';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
-export const Register = () => {
+export const Register = (navigation) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -33,7 +33,8 @@ export const Register = () => {
           placeholder="E-mail"
           value={email}
           onChangeText={(text) => setEmail(text)}
-        /><View></View>
+        />
+        <View></View>
         </View>
 
         <View style={styles.input}>

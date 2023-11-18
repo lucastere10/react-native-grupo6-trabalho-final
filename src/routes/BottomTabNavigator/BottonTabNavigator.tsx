@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home } from "../../screen/Home";
 import { Login } from "../../screen/Login";
 import { Category } from "../../screen/Category";
-import { AntDesign, Entypo } from '@expo/vector-icons';
+import { AntDesign, Entypo, FontAwesome, Ionicons } from '@expo/vector-icons';
 import { Register } from "../../screen/Register";
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
@@ -41,7 +41,7 @@ export const TabRoutes = () => {
                                 borderTopWidth: focused ? 4 : 0,
                                 borderTopColor: "#B2CDB3"
                             }}>
-                                <AntDesign name="tag" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
+                                <FontAwesome name="home" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
                             </View>
                         )
                     }}
@@ -76,7 +76,7 @@ export const TabRoutes = () => {
                                 borderTopWidth: focused ? 4 : 0,
                                 borderTopColor: "#B2CDB3"
                             }}>
-                                <AntDesign name="user" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
+                                <Ionicons name="person" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
                             </View>
                         ),
                     }}
