@@ -25,7 +25,7 @@ export const TabRoutes = () => {
                     tabBarShowLabel: false,
                     headerShown: false,
                     tabBarStyle: {
-                        backgroundColor: "#202126",
+                        backgroundColor: "#4F392B",
                         height: 75,
                     },
                 }}>
@@ -40,9 +40,9 @@ export const TabRoutes = () => {
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderTopWidth: focused ? 4 : 0,
-                                borderTopColor: "#FFD700"
+                                borderTopColor: "#B2CDB3"
                             }}>
-                                <AntDesign name="tag" size={32} color={focused ? "#FFD700" : "#D4D3D9"} />
+                                <AntDesign name="tag" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
                             </View>
                         )
                     }}
@@ -58,9 +58,9 @@ export const TabRoutes = () => {
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderTopWidth: focused ? 4 : 0,
-                                borderTopColor: "#FFD700"
+                                borderTopColor: "#B2CDB3"
                             }}>
-                                <Entypo name="list" size={32} color={focused ? "#FFD700" : "#D4D3D9"} />
+                                <Entypo name="list" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
                             </View>),
                     }}
                 />
@@ -75,9 +75,9 @@ export const TabRoutes = () => {
                                 justifyContent: "center",
                                 alignItems: "center",
                                 borderTopWidth: focused ? 4 : 0,
-                                borderTopColor: "#FFD700"
+                                borderTopColor: "#B2CDB3"
                             }}>
-                                <AntDesign name="user" size={32} color={focused ? "#FFD700" : "#D4D3D9"} />
+                                <AntDesign name="user" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
                             </View>
                         ),
                     }}
