@@ -1,22 +1,21 @@
-import { BottomTabView } from "@react-navigation/bottom-tabs";
 import { View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Home } from "../../screen/Home";
 import { Login } from "../../screen/Login";
+import { Products } from "../../screen/Products";
 import { Category } from "../../screen/Category";
-import { AntDesign, Entypo, FontAwesome, Ionicons } from '@expo/vector-icons';
-import { Register } from "../../screen/Register";
+import { Entypo, FontAwesome, Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
     Home: undefined;
-    Login: undefined;
+    Products: undefined;
     Category: undefined;
 }
 
-export const TabRoutes = () => {
+export const TabRoutes = ({ setAuth }) => {
     return (
         <NavigationContainer>
             <Tab.Navigator
@@ -30,7 +29,6 @@ export const TabRoutes = () => {
                 }}>
                 <Tab.Screen
                     name="Home"
-                    component={Home}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
@@ -45,7 +43,9 @@ export const TabRoutes = () => {
                             </View>
                         )
                     }}
-                />
+                >
+                    {() => <Home setAuth={setAuth} />}
+                </Tab.Screen>
                 <Tab.Screen
                     name="Category"
                     component={Category}
@@ -64,8 +64,8 @@ export const TabRoutes = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="Login"
-                    component={Login}
+                    name="Products"
+                    component={Products}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
