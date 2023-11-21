@@ -21,7 +21,7 @@ export const CardProdutos = ({ item }: productProps) => {
             <View style={styles.container}>
                 <View style={styles.produto}>
                 </View>
-                <View style={styles.info}>                    
+                <View style={styles.info}>
                     <Text>{item !== undefined ? item.title : 'Loading...'}</Text>
                 </View>
             </View>
