@@ -27,7 +27,7 @@ export const Login = ({ navigation, setAuth }) => {
           <TextInput
             style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
             placeholder="Senha"
-            secureTextEntry
+           // secureTextEntry
             value={password}
             onChangeText={(text) => setPassword(text)}
           />
