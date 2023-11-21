@@ -64,7 +64,6 @@ export const Register = ({ navigation }) => {
           style={styles.Botao}
           onPress={() => {
             createUser(username, email, password);
-            console.log('Realizar Cadastro');
             navigation.navigate('Login');
           }}
         >

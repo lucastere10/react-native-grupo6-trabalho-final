@@ -1,22 +1,21 @@
-import {View,Text} from 'react-native';
+import { View, TouchableOpacity,Text } from 'react-native';
 import { styles } from './style';
 
+export const CardCategoria = ({ item, navigation }) => {
 
 
-
-export const CardCategoria = () =>{
-
-    return(
-        <View >
-         
-         <View style={styles.card}>
-
-            <View style={styles.info}>
-
+    return (
+        <TouchableOpacity onPress={() => {
+            navigation.navigate('Products', { categoria:item });
+          }}>
+            <View >
+                <View style={styles.card}>
+                    <Text>{ item }</Text>
+                    <View style={styles.info}>
+                    </View>
+                </View>
             </View>
-         </View>
-         
-       
-        </View>
+        </TouchableOpacity>
     )
+
 }

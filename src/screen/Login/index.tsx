@@ -36,17 +36,15 @@ export const Login = ({ navigation, setAuth }) => {
 
         <View>
           <Text style={styles.Letras} > Não possui conta? </Text>
-          <TouchableOpacity onPress={() => console.log('Redirecionar para a tela de cadastro')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
             <Text
               style={{ color: 'white', textAlign: 'center' }}
-              onPress={() => navigation.navigate('Register')}
             >Cadastre-se</Text>
           </TouchableOpacity>
         </View>
 
         <TouchableOpacity style={styles.Botao} onPress={() => {
           loginUser(username, password, setAuth);
-          console.log('Realizar Login')
         }
         }>
           <Text style={{ color: 'white', textAlign: 'center', fontSize: 15, fontWeight: 'bold' }}>LOGIN</Text>
