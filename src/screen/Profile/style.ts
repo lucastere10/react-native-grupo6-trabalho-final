@@ -48,9 +48,38 @@ export const styles = StyleSheet.create({
         textDecorationLine:"underline"
     },
     cardcontainer:{
-
+        
+        padding: 20,
+        width: '100%',
+        alignItems:"flex-start",
+        backgroundColor: '#E7DCDA', 
+        
+         
     },
     text2:{
+        marginBottom: 15,
+        fontSize: 20,
         
-    }
+        
+    },
+    profileImage:{
+        width: 150,
+        height:150,
+        borderRadius: 100,
+        borderWidth: 1,
+        marginVertical: 20,
+        marginLeft: 120
+        
+        
+    },
+    cardtotal:{
+        backgroundColor: '#E7DCDA',
+        flex: 1
+        
+    },
+    boldText: {
+        fontWeight: 'bold',
+        color: '#3F3335', 
+      },
+    
 });

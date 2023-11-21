@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity,Image} from 'react-native';
 import { styles } from './style';
 
 export interface productsListProps {
@@ -19,10 +19,13 @@ export const CardProdutosHome = ({ item }: productProps) => {
     return (
         <TouchableOpacity>
             <View style={styles.container}>
-                <View style={styles.produto}>
-                </View>
+            <Image
+                      style={styles.Image}
+                      source={{uri: item !== undefined ? item.thumbnail : 'Loading...' }}
+                  />
+                
                 <View style={styles.info}>                    
-                    <Text>{item !== undefined ? item.title : 'Loading...'}</Text>
+                    <Text style={styles.title}>{item !== undefined ? item.title : 'Loading...'}</Text>
                 </View>
             </View>
         </TouchableOpacity>

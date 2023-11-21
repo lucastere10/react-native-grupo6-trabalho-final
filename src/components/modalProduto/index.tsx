@@ -92,5 +92,4 @@ export const ModalProduto = ({ isModalVisible, setIsModalVisible, id }: ModalPro
 			</Modal>
 		</>
 	)
-
 }

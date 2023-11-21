@@ -8,6 +8,7 @@ export const Profile = ({ setAuth }) => {
   const [secondname, setSecondName] = useState('');
   const [email, setEmail] = useState('');
   const [usuario, setUsuario] = useState('');
+  const [url, setUrl] = useState('');
 
   useEffect(() => {
     const getData = async () => {
@@ -19,6 +20,7 @@ export const Profile = ({ setAuth }) => {
           setSecondName(userInfo.lastName);
           setEmail(userInfo.email);
           setUsuario(userInfo.username);
+          setUrl(userInfo.image)
         }
       } catch (e) {
         console.log(e);
@@ -35,14 +37,16 @@ export const Profile = ({ setAuth }) => {
       </View>
       <View style={styles.containerLower}>
         <Text style={styles.text}>Profile</Text>
-        <View style={styles.cardcontainer}>
-        <Image source={{ }} />
+      </View >
+        <View style={styles.cardtotal} >
+          <Image source={{ uri: url }} style={styles.profileImage} />
         </View>
+      <View style={styles.cardcontainer}>
+        <Text style={styles.text2}><Text style={styles.boldText}>First Name: </Text> {firstname}</Text>
+        <Text style={styles.text2}><Text style={styles.boldText}>Second Name: </Text> {secondname}</Text>
+        <Text style={styles.text2}><Text style={styles.boldText}>E-Mail: </Text>{email}</Text>
+        <Text style={styles.text2}><Text style={styles.boldText}>User: </Text>{usuario}</Text>
       </View>
-      <Text style={styles.text2}>{firstname}</Text>
-      <Text style={styles.text2}>{secondname}</Text>
-      <Text style={styles.text2}>{email}</Text>
-      <Text style={styles.text2}>{usuario}</Text>
     </SafeAreaView>
   );
 };

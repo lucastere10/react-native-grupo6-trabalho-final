@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './style';
 
 export interface productsListProps {
@@ -9,6 +9,7 @@ export interface productsListProps {
     rating: number;
     category: string;
     thumbnail: string;
+    brand: string;
 }
 
 export interface productProps {
@@ -17,20 +18,21 @@ export interface productProps {
 	setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export const CardProdutos = ({ item, setIsModalVisible, setSelectedId}: productProps) => {
-    
+export const CardProdutos = ({ item, setIsModalVisible, setSelectedId}: productProps) => {   
     function abrirModal () {
 		setSelectedId(item.id);
 		setIsModalVisible(true);
 	}
-    
     return (
         <TouchableOpacity onPress={abrirModal}>
             <View style={styles.container}>
                 <View style={styles.produto}>
+                    <Image source={{uri: item.thumbnail}} style={styles.image} />
                 </View>
                 <View style={styles.info}>                    
-                    <Text>{item !== undefined ? item.title : 'Loading...'}</Text>
+                    <Text style={styles.title}>
+                        {item !== undefined ? `${item.title} - ${item.brand}` : 'Loading...'}
+                    </Text>
                 </View>
             </View>
         </TouchableOpacity>
