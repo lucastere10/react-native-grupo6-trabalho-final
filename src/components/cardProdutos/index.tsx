@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './style';
 
 export interface productsListProps {
@@ -9,6 +9,7 @@ export interface productsListProps {
     rating: number;
     category: string;
     thumbnail: string;
+    brand: string;
 }
 
 export interface productProps {
@@ -16,13 +17,18 @@ export interface productProps {
 }
 
 export const CardProdutos = ({ item }: productProps) => {
+    const limitedDescription = item.description.split(' ').slice(0, 25).join(' ');
+
     return (
         <TouchableOpacity>
             <View style={styles.container}>
                 <View style={styles.produto}>
+                    <Image source={{uri: item.thumbnail}} style={styles.image} />
                 </View>
                 <View style={styles.info}>                    
-                    <Text>{item !== undefined ? item.title : 'Loading...'}</Text>
+                    <Text style={styles.title}>
+                        {item !== undefined ? `${item.title} - ${item.brand}` : 'Loading...'}
+                    </Text>
                 </View>
             </View>
         </TouchableOpacity>

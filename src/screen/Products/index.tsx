@@ -41,7 +41,7 @@ export const Products = ({ route }) => {
 	}
 
 	return (
-		<SafeAreaView>
+		<SafeAreaView style={{flex: 1}}>
 			<View style={styles.containerUpper}>
 				<Image style={{ marginTop: 30 }} source={require("../../assets/images/ShoinLogo.png")}></Image>
 			</View>
