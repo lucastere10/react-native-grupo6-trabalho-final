@@ -1,14 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import { TabRoutes } from './src/routes/BottomTabNavigator/BottonTabNavigator';
-import { MyStack } from './src/routes/BottomTabNavigator/StackNavigator';
-import { NavigationContainer } from '@react-navigation/native';
+import { AuthStackScreen } from './src/routes/StackNavigator/StackNavigator';
+import { useEffect, useState } from 'react';
+import { checkAuth } from './src/context/authContext';
 
 
 export default function App() {
+  const [auth, setAuth] = useState(false);
+
+  useEffect(() => {
+    checkAuth(setAuth);
+  }, []);
+
   return (
     <>
       <StatusBar style="inverted" />
-      <TabRoutes />
+      {auth ? <TabRoutes setAuth={setAuth} /> : <AuthStackScreen setAuth={setAuth} />}
     </>
   );
 }
+
