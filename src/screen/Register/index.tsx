@@ -96,6 +96,7 @@ export const Register = ({ navigation }) => {
             }
 
             createUser(username, email, password);
+            alert('User created sucessfully!');
             navigation.navigate('Login');
           }}
         >

@@ -14,13 +14,17 @@ export interface productsListProps {
 
 export interface productProps {
     item: productsListProps
+    setSelectedId: React.Dispatch<React.SetStateAction<number>>,
+	setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
 }
 
-export const CardProdutos = ({ item }: productProps) => {
-    const limitedDescription = item.description.split(' ').slice(0, 25).join(' ');
-
+export const CardProdutos = ({ item, setIsModalVisible, setSelectedId}: productProps) => {   
+    function abrirModal () {
+		setSelectedId(item.id);
+		setIsModalVisible(true);
+	}
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={abrirModal}>
             <View style={styles.container}>
                 <View style={styles.produto}>
                     <Image source={{uri: item.thumbnail}} style={styles.image} />
