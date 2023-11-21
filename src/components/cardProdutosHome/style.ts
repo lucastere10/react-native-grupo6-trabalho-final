@@ -6,17 +6,20 @@ export const styles = StyleSheet.create({
         width:72,
         height:111
     },
-
-    produto:{
-        backgroundColor:'#D1B8A4',
-        width:72,
-        height:85,
-    },
     info:{
-        width:72,
+        fontSize:5,
+        width:80,
         height:29,
         backgroundColor:'#D9D9D9'
+    },
+    Image:{
+        width:80,
+        height:95
+    },
+    title:{
+        fontSize:12,
+        fontWeight:'bold',
+        overflow:'hidden'
     }
-
 
 })
