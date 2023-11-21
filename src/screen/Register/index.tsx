@@ -43,7 +43,7 @@ export const Register = ({ navigation }) => {
           <TextInput
             style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
             placeholder="Password"
-            //secureTextEntry
+            secureTextEntry
             value={password}
             onChangeText={(text) => setPassword(text)}
           /><View></View>
@@ -63,6 +63,38 @@ export const Register = ({ navigation }) => {
         <TouchableOpacity
           style={styles.Botao}
           onPress={() => {
+            // Verificar se todos os campos foram passados
+            if (!username || !email || !password || !repeatPassword) {
+              alert('All fields are required!');
+              return;
+            }
+
+            // username com pelo menos 8 caracteres
+            if (username.length < 8) {
+              alert('Username must be at least 8 characters long!');
+              return;
+            }
+
+            // Verificar se o email é valido
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+              alert('Please enter a valid email!');
+              return;
+            }
+
+            //  Verificar se a senha possui pelo menos 1 numero e 8 caracteres
+            const passwordRegex = /^(?=.*\d).{8,}$/;
+            if (!passwordRegex.test(password)) {
+              alert('Password must be at least 8 characters long and contain at least 1 number!');
+              return;
+            }
+
+            // Verificar se ambas as senhas são iguais
+            if (password !== repeatPassword) {
+              alert('Passwords do not match!');
+              return;
+            }
+
             createUser(username, email, password);
             navigation.navigate('Login');
           }}
