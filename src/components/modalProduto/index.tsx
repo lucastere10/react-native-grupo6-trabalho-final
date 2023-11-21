@@ -1,7 +1,8 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ActivityIndicator, ScrollView, Image, Button } from 'react-native';
 import { useState, useEffect } from 'react';
-import { getProductDetails } from '../../service/api';
+import { getProductDetails, getProductResponse } from '../../service/api';
 import { styles } from './style';
+import { Ionicons, FontAwesome, AntDesign } from '@expo/vector-icons';
 
 interface ModalProductDetailsProps {
 	isModalVisible: boolean,
@@ -26,11 +27,10 @@ export const ModalProduto = ({ isModalVisible, setIsModalVisible, id }: ModalPro
 		writeProductDetails(id)
 	}, []);
 
-	function writeProductDetails(id: string) {
-		getProductResponse(id)
+	function writeProductDetails(id: number) {
+		getProductDetails(id)
 			.then(response => {
-				setMagicItem(response.data);
-				magicItemWithPrice
+				setProduct(response.data);
 			})
 			.catch(error => {
 				console.log(error);
@@ -39,5 +39,58 @@ export const ModalProduto = ({ isModalVisible, setIsModalVisible, id }: ModalPro
 				setIsLoading(false);
 			});
 	}
+
+	return (
+		<>
+			<Modal
+				animationType="slide"
+				transparent={true}
+				visible={isModalVisible}
+				onRequestClose={() => {
+					setIsModalVisible(false);
+				}}
+			>
+				<View style={styles.modal}>
+					{
+						isLoading ?
+							<ActivityIndicator
+								size={"large"}
+							/>
+							:
+							<>
+								{/* Modal de Imagem */}
+								<View style={styles.containerImage}>
+									<Image source={{ uri: product.thumbnail }} />
+									<TouchableOpacity onPress={() => setIsModalVisible(false)}>
+										<AntDesign name="close" size={32} color={'black'} />
+									</TouchableOpacity>
+								</View>
+								{/* Modal de Textos */}
+								<View style={styles.containerText}>
+									<View>
+										<Text>{product.brand}</Text>
+									</View>
+									<View>
+										<Text>Star</Text>
+										<Text>{product.rating}</Text>
+										<Text>21</Text>
+									</View>
+									<View>
+										<Text>{product.title}</Text>
+									</View>
+									<View>
+										<Text>{product.description}</Text>
+									</View>
+									<View>
+										<Text>{product.price}</Text>
+										<Text>Heart</Text>
+									</View>
+								</View>
+							</>
+					}
+				</View>
+			</Modal>
+		</>
+	)
 
 }

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, SafeAreaView, Image, FlatList } from "react-native"
+import { View, Text, SafeAreaView, Image, FlatList, ActivityIndicator } from "react-native"
 import { styles } from "./style"
 import { CardProdutos, productsListProps } from "../../components/cardProdutos";
+import { ModalProduto } from "../../components/modalProduto";
 import { getAllProductList, getProductList } from "../../service/api";
 import { useFocusEffect } from '@react-navigation/native';
 
 
 
 export const Products = ({ route }) => {
+	const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
+	const [selectedId, setSelectedId] = useState<number>(null);
 	const { categoria } = route.params;
-
-
 	console.log(`categoria dos produtos: ${categoria}`)
-
 	const [productsList, setProductsList] = useState<productsListProps[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
 
@@ -48,13 +48,26 @@ export const Products = ({ route }) => {
 			<View style={styles.containerLower}>
 				<Text style={styles.text}>{categoria}</Text>
 			</View>
-			<FlatList
-				data={productsList}
-				renderItem={({ item }) => {
-					console.log(`${item}`);
-					return <CardProdutos item={item} />;
-				}}
-			/>
+			{
+				isLoading ?
+					<ActivityIndicator
+						size={"large"}
+						color={'#156'}
+					/>
+					:
+					<FlatList
+						data={productsList}
+						renderItem={({ item }) => {
+							console.log(`${item}`);
+							return <CardProdutos 
+								item={item}  
+								setIsModalVisible={setIsModalVisible}
+								setSelectedId={setSelectedId}
+							/>;
+						}}
+					/>
+			}
+			{isModalVisible && <ModalProduto id={selectedId} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />}
 		</SafeAreaView>
 	)
 }
