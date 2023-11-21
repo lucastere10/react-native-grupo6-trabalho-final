@@ -35,9 +35,19 @@ export const loginUser = async (username, password, setAuth) => {
         }); 
 
         await AsyncStorage.setItem("id", response.data.token);
-        console.log(`data: ${response.data}`);
-        console.log(`token: ${response.data.token}`);
 
+        const userInfo = {
+            id: response.data.id,
+            username: response.data.username,
+            email: response.data.email,
+            firstName: response.data.firstName,
+            lastName: response.data.lastName,
+            gender: response.data.gender,
+            image: response.data.image,
+        };
+            await AsyncStorage.setItem("userInfo", JSON.stringify(userInfo));
+
+            
         // Call checkAuth again after successful login
         checkAuth(setAuth);
 
