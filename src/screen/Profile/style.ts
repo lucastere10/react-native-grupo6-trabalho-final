@@ -1,4 +1,4 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, StatusBar } from "react-native";
 
 export const styles = StyleSheet.create({
     container:{
@@ -17,10 +17,23 @@ export const styles = StyleSheet.create({
         alignItems:'center',
         height:40
     },
-    containerCards:{
+    containerCard:{
+        marginTop:20,
         justifyContent:'center',
-        alignItems:'center',
-        
+        alignItems:"center"
+    },
+    containerProducts:{
+        justifyContent:'center',
+        alignItems:"center",
+        marginTop:25,
+        gap:16
+    },
+    containerLowerCard:{
+        justifyContent:'center',
+        alignItems:"center",
+        marginTop:40,
+        flexDirection:'row',
+        gap:20
     },
     text:{
         fontWeight:'bold',
@@ -28,4 +41,10 @@ export const styles = StyleSheet.create({
         color:'#3F3335',
         textDecorationLine:'underline'
     },
-})
+    title:{
+        fontSize:18,
+        fontWeight:"bold",
+        color:'#3F3335',
+        textDecorationLine:"underline"
+    }
+});
