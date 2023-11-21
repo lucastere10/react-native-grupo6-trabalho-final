@@ -5,14 +5,16 @@ import { Home } from "../../screen/Home";
 import { Login } from "../../screen/Login";
 import { Products } from "../../screen/Products";
 import { Category } from "../../screen/Category";
+import { Profile } from "../../screen/Profile";
+import { CategoriesStackScreen } from "../CategoriesNavigator/CategoriesNavigator";
 import { Entypo, FontAwesome, Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator<RootTabParamList>();
 
 export type RootTabParamList = {
     Home: undefined;
-    Products: undefined;
-    Category: undefined;
+    Profile: undefined;
+    CategoriesStackScreen: undefined;
 }
 
 export const TabRoutes = ({ setAuth }) => {
@@ -47,8 +49,8 @@ export const TabRoutes = ({ setAuth }) => {
                     {() => <Home setAuth={setAuth} />}
                 </Tab.Screen>
                 <Tab.Screen
-                    name="Category"
-                    component={Category}
+                    name="CategoriesStackScreen"
+                    component={CategoriesStackScreen}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
@@ -64,8 +66,8 @@ export const TabRoutes = ({ setAuth }) => {
                     }}
                 />
                 <Tab.Screen
-                    name="Products"
-                    component={Products}
+                    name="Profile"
+                    component={Profile}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
@@ -85,4 +87,4 @@ export const TabRoutes = ({ setAuth }) => {
             </Tab.Navigator>
         </NavigationContainer>
     );
-}
+} 

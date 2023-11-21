@@ -15,7 +15,7 @@ export interface productProps {
     item: productsListProps
 }
 
-export const CardProdutos = ({ item }: productProps) => {
+export const CardProdutosHome = ({ item }: productProps) => {
     return (
         <TouchableOpacity>
             <View style={styles.container}>
