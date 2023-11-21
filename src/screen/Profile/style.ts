@@ -46,5 +46,11 @@ export const styles = StyleSheet.create({
         fontWeight:"bold",
         color:'#3F3335',
         textDecorationLine:"underline"
+    },
+    cardcontainer:{
+
+    },
+    text2:{
+        
     }
 });
