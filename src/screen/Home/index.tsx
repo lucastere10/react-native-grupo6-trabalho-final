@@ -8,6 +8,8 @@ import React, { useEffect, useState } from "react"
 import { getAllProductList, getCategoriesList } from "../../service/api"
 import { useFocusEffect } from "@react-navigation/native"
 import { ModalProduto } from "../../components/modalProduto"
+import { ModalEquipe } from "../../components/modalEquipe"
+import { ModalEmpresa } from "../../components/modalEmpresa"
 
 export const Home = ({ setAuth }) => {
 
@@ -22,6 +24,10 @@ export const Home = ({ setAuth }) => {
   //montar a porra do modal
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 	const [selectedId, setSelectedId] = useState<number>(null);
+
+  //montar a porra do modal de equipe
+  const [isTeamModalVisible, setIsTeamModalVisible] = useState<boolean>(false);
+  const [isEmpresaModalVisible, setIsEmpresaModalVisible] = useState<boolean>(false);
 
   //pegar produtos
   const [productsList, setProductsList] = useState<productsListProps[]>([]);
@@ -134,12 +140,14 @@ export const Home = ({ setAuth }) => {
           </View>
         </View>
         <View style={styles.containerLowerCard}>
-          <CardEstacoes titulo={"NOSSA EQUIPE"} cor={'#D1B8A4'}/>
-          <CardEstacoes titulo={"NOSSA EMPRESA"} cor={'#7E8F7F'}/>
+          <CardEstacoes setIsModalVisible={setIsTeamModalVisible} titulo={"NOSSA EQUIPE"} cor={'#D1B8A4'}/>
+          <CardEstacoes setIsModalVisible={setIsEmpresaModalVisible} titulo={"NOSSA EMPRESA"} cor={'#7E8F7F'}/>
         </View>
         <View style={{ marginBottom: 80 }}></View>
       </ScrollView>
       {isModalVisible && <ModalProduto id={selectedId} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />}
+      {isTeamModalVisible && <ModalEquipe isModalVisible={isTeamModalVisible} setIsModalVisible={setIsTeamModalVisible}/>}
+      {isEmpresaModalVisible && <ModalEmpresa isModalVisible={isEmpresaModalVisible} setIsModalVisible={setIsEmpresaModalVisible}/>}
     </SafeAreaView>
   )
 }
