@@ -1,14 +1,18 @@
-import {View,Text} from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { styles } from './style';
 
 
 
 
-export const CardEstacoes = () =>{
+export const CardEstacoes = ({titulo, cor}) => {
 
-    return(
-        <View >
-            <View style={styles.card}></View>
-        </View>
+    return (
+        <TouchableOpacity >
+            <View style={[styles.card,{backgroundColor:cor}]}>
+                <Image style={styles.image} source={require('../../assets/images/ShoinLogo.png')} />
+                <Text style={[styles.titulo, {fontFamily:'BebasNeue-Regular'}]}>{titulo}</Text>
+            </View>
+
+        </TouchableOpacity>
     )
 }

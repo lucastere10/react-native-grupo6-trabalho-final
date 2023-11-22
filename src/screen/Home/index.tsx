@@ -134,8 +134,8 @@ export const Home = ({ setAuth }) => {
           </View>
         </View>
         <View style={styles.containerLowerCard}>
-          <CardEstacoes></CardEstacoes>
-          <CardEstacoes></CardEstacoes>
+          <CardEstacoes titulo={"NOSSA EQUIPE"} cor={'#D1B8A4'}/>
+          <CardEstacoes titulo={"NOSSA EMPRESA"} cor={'#7E8F7F'}/>
         </View>
         <View style={{ marginBottom: 80 }}></View>
       </ScrollView>
