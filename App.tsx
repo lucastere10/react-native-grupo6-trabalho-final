@@ -1,16 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
 import { TabRoutes } from './src/routes/BottomTabNavigator/BottonTabNavigator';
 import { AuthStackScreen } from './src/routes/StackNavigator/StackNavigator';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback  } from 'react';
 import { checkAuth } from './src/context/authContext';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 
 
 export default function App() {
   const [auth, setAuth] = useState(false);
+  const [fontsLoaded, fontError] = useFonts({
+    'Poppins-Regular': require('./src/assets/fonts/Poppins-Regular.otf')
+  })
 
   useEffect(() => {
     checkAuth(setAuth);
-  }, []);
+  }, []); 
+
+  // const onLayoutRootView = useCallback(async () => {
+  //   if (fontsLoaded || fontError) {
+  //     await SplashScreen.hideAsync();
+  //   }
+  // }, [fontsLoaded, fontError]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
+
 
   return (
     <>

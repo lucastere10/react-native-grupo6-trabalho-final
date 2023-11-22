@@ -21,6 +21,7 @@ export interface getProductResponse {
 	brand: string;
 	category: string;
 	thumbnail: string;
+	stock: number;
 }
 
 // PEGAR TODAS AS CATEGORIAS

@@ -14,6 +14,7 @@ export const styles = StyleSheet.create({
         color:'#FFFFFF',
         fontSize:33,
         fontWeight:'bold',
-        textDecorationLine:'underline'   
+        textDecorationLine:'underline',
+        fontFamily:'Poppins-Regular'
     }
 })
