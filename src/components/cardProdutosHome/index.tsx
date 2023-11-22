@@ -9,15 +9,21 @@ export interface productsListProps {
     rating: number;
     category: string;
     thumbnail: string;
+    brand: string;
 }
 
 export interface productProps {
     item: productsListProps
-}
+    setSelectedId: React.Dispatch<React.SetStateAction<number>>,
+	setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,}
 
-export const CardProdutosHome = ({ item }: productProps) => {
+export const CardProdutosHome = ({ item, setIsModalVisible, setSelectedId}: productProps) => {   
+    function abrirModal () {
+		setSelectedId(item.id);
+		setIsModalVisible(true);
+	}
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={abrirModal}>
             <View style={styles.container}>
                 <Image
                     style={styles.Image}

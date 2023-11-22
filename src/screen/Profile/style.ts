@@ -1,5 +1,6 @@
 import { StyleSheet, StatusBar } from "react-native";
 
+
 export const styles = StyleSheet.create({
     container:{
         backgroundColor: '#F4F4F4',
@@ -80,5 +81,21 @@ export const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#3F3335', 
       },
+    logout:{
+        backgroundColor:'#3F3335',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'center',
+        marginTop:16,
+        borderRadius:12,
+        padding:10,
+        paddingHorizontal:20,
+        gap:8
+    },
+    logoutText:{
+        color:'#FFFFFF',
+        fontSize:20,
+    }
+
     
 });

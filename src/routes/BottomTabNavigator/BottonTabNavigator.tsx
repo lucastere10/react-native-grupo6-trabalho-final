@@ -67,7 +67,6 @@ export const TabRoutes = ({ setAuth }) => {
                 />
                 <Tab.Screen
                     name="Profile"
-                    component={Profile}
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <View style={{
@@ -80,10 +79,11 @@ export const TabRoutes = ({ setAuth }) => {
                             }}>
                                 <Ionicons name="person" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
                             </View>
-                        ),
+                        )
                     }}
-
-                />
+                >
+                    {() => <Profile setAuth={setAuth} />}
+                </Tab.Screen>
             </Tab.Navigator>
         </NavigationContainer>
     );
