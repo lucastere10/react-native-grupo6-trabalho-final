@@ -30,7 +30,7 @@ export const CardProdutos = ({ item, setIsModalVisible, setSelectedId}: productP
                     <Image source={{uri: item.thumbnail}} style={styles.image} />
                 </View>
                 <View style={styles.info}>                    
-                    <Text style={styles.title}>
+                    <Text style={[styles.title, {fontFamily:'Poppins-Regular'}]}>
                         {item !== undefined ? `${item.title} - ${item.brand}` : 'Loading...'}
                     </Text>
                 </View>

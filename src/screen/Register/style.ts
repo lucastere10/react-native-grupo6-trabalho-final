@@ -31,13 +31,13 @@ export const styles = StyleSheet.create({
     alignItems: 'center'
   },
   Botao:{
-    width: 100,
-    height: 30,
+    paddingHorizontal: 24,
+    paddingVertical:5,
     backgroundColor: '#7E8F7F',
-    borderRadius: 20,
+    borderRadius: 35,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 120,
   },
   Letras:{
     color: '#fff',

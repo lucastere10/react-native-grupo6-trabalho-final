@@ -29,7 +29,6 @@ export const styles = StyleSheet.create({
         borderTopRightRadius: 10, 
     },
     title: {
-        fontWeight: 'bold',
         fontSize: 16,
         marginTop: 12,
         marginLeft: 10,

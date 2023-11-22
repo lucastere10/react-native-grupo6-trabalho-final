@@ -46,7 +46,7 @@ export const Products = ({ route }) => {
 				<Image style={{ marginTop: 30 }} source={require("../../assets/images/ShoinLogo.png")}></Image>
 			</View>
 			<View style={styles.containerLower}>
-				<Text style={styles.text}>{categoria}</Text>
+				<Text style={[styles.text, {fontFamily:'Poppins-SemiBold'}]}>{categoria}</Text>
 			</View>
 			{
 				isLoading ?

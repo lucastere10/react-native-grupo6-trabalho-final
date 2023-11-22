@@ -19,7 +19,7 @@ export const Register = ({ navigation }) => {
           <Ionicons name="person-circle" size={28} color="#3F3335" />
 
           <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
+            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30, fontFamily:'Poppins-Regular' }}
             placeholder="Username"
             value={username}
             onChangeText={(text) => setUsername(text)}
@@ -30,7 +30,7 @@ export const Register = ({ navigation }) => {
         <View style={styles.input}>
           <Ionicons name="at" size={28} color="#3F3335" />
           <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
+            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30, fontFamily:'Poppins-Regular'}}
             placeholder="E-mail"
             value={email}
             onChangeText={(text) => setEmail(text)}
@@ -41,7 +41,7 @@ export const Register = ({ navigation }) => {
         <View style={styles.input}>
           <FontAwesome name="unlock-alt" size={28} color="#3F3335" />
           <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
+            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30, fontFamily:'Poppins-Regular'}}
             placeholder="Password"
             secureTextEntry
             value={password}
@@ -52,7 +52,7 @@ export const Register = ({ navigation }) => {
         <View style={styles.input}>
           <FontAwesome name="unlock-alt" size={28} color="#3F3335" />
           <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
+            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30, fontFamily:'Poppins-Regular'}}
             placeholder="Repeat Password"
             secureTextEntry
             value={repeatPassword}
@@ -100,7 +100,7 @@ export const Register = ({ navigation }) => {
             navigation.navigate('Login');
           }}
         >
-          <Text style={{ color: 'white' }}>Cadastrar</Text>
+          <Text style={{ color: 'white', fontFamily:'Poppins-Bold', fontSize:20 }}>Cadastrar</Text>
         </TouchableOpacity>
 
       </View>
