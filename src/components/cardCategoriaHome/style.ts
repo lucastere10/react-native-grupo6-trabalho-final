@@ -3,21 +3,17 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     card: {
         margin:5,
-        width:361,
-        height:190,
+        width:360,
+        height:117,
         borderRadius:10,
-        backgroundColor:'#D1B8A4'
+        backgroundColor:'#D1B8A4',
+        padding:17,
+        justifyContent:'flex-end'
     },
-
-  
-    info:{
-       marginTop:154,
-        width:361,
-        height:36,
-        backgroundColor:'#D9D9D9',
-        borderBottomLeftRadius:10,
-        borderBottomRightRadius:10
+    title:{
+        color:'#FFFFFF',
+        fontSize:33,
+        fontWeight:'bold',
+        textDecorationLine:'underline'   
     }
-
-
 })

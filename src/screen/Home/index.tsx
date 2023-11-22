@@ -61,13 +61,21 @@ export const Home = ({ setAuth }) => {
             <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
             <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
             <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
-           
           </View>
           <View style={{ flexDirection: 'row', gap: 10 }}>
             <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
             <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
             <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
-          
+          </View>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
+            <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
+            <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
+          </View>
+          <View style={{ flexDirection: 'row', gap: 10 }}>
+            <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
+            <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
+            <CardProdutosHome item = {productsList[Math.floor(Math.random() * 30)]}/>
           </View>
         </View>
         <View style={styles.containerLowerCard}>

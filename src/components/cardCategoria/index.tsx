@@ -10,9 +10,7 @@ export const CardCategoria = ({ item, navigation }) => {
           }}>
             <View >
                 <View style={styles.card}>
-                    <Text>{ item }</Text>
-                    <View style={styles.info}>
-                    </View>
+                    <Text style={styles.title}>{ item }</Text>
                 </View>
             </View>
         </TouchableOpacity>

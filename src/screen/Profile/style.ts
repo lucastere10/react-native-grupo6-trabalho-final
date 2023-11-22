@@ -67,10 +67,9 @@ export const styles = StyleSheet.create({
         height:150,
         borderRadius: 100,
         borderWidth: 1,
+        borderColor:'black',
         marginVertical: 20,
-        marginLeft: 120
-        
-        
+        marginLeft: 120  
     },
     cardtotal:{
         backgroundColor: '#E7DCDA',
