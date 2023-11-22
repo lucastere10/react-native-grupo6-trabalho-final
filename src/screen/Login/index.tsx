@@ -14,7 +14,7 @@ export const Login = ({ navigation, setAuth }) => {
         <View style={styles.input}>
           <Ionicons style={styles.icon} name="person-circle" size={28} color="#3F3335" />
           <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
+            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30, fontFamily:'Poppins-Regular' }}
             placeholder="Nome"
             value={username}
             onChangeText={(text) => setUsername(text)}
@@ -25,9 +25,9 @@ export const Login = ({ navigation, setAuth }) => {
         <View style={styles.input}>
           <FontAwesome style={styles.icon} name="unlock-alt" size={28} color="#3F3335" />
           <TextInput
-            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30 }}
+            style={{ textAlign: 'center', width: '100%', paddingLeft: 30, paddingRight: 30, fontFamily:'Poppins-Regular' }}
             placeholder="Senha"
-           // secureTextEntry
+            secureTextEntry
             value={password}
             onChangeText={(text) => setPassword(text)}
           />
@@ -35,10 +35,10 @@ export const Login = ({ navigation, setAuth }) => {
         </View>
 
         <View>
-          <Text style={styles.Letras} > Não possui conta? </Text>
+          <Text style={[styles.Letras, {fontFamily:'Poppins-Regular'}]} > Não possui conta? </Text>
           <TouchableOpacity onPress={() => navigation.navigate('Register')}>
             <Text
-              style={{ color: 'white', textAlign: 'center' }}
+              style={{ color: 'white', textAlign: 'center', fontFamily:'Poppins-Regular' }}
             >Cadastre-se</Text>
           </TouchableOpacity>
         </View>
@@ -47,7 +47,7 @@ export const Login = ({ navigation, setAuth }) => {
           loginUser(username, password, setAuth);
         }
         }>
-          <Text style={{ color: 'white', textAlign: 'center', fontSize: 15, fontWeight: 'bold' }}>LOGIN</Text>
+          <Text style={{ color: 'white', textAlign: 'center', fontSize: 20, fontFamily:'Poppins-Bold'}}>LOGIN</Text>
         </TouchableOpacity>
       </View>
     </ImageBackground>

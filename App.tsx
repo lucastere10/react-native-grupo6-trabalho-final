@@ -10,7 +10,10 @@ import * as SplashScreen from 'expo-splash-screen';
 export default function App() {
   const [auth, setAuth] = useState(false);
   const [fontsLoaded, fontError] = useFonts({
-    'Poppins-Regular': require('./src/assets/fonts/Poppins-Regular.otf')
+    'Poppins-Regular': require('./src/assets/fonts/Poppins-Regular.otf'),
+    'Poppins-SemiBold': require('./src/assets/fonts/Poppins-SemiBold.otf'),
+    'Poppins-Bold': require('./src/assets/fonts/Poppins-Bold.otf'),
+    'BebasNeue-Regular': require('./src/assets/fonts/BebasNeue-Regular.ttf')
   })
 
   useEffect(() => {

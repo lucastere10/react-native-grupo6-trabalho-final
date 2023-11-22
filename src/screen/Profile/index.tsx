@@ -39,7 +39,7 @@ export const Profile = ({ setAuth }) => {
         <Image style={{ marginTop: 30 }} source={require('../../assets/images/ShoinLogo.png')} />
       </View>
       <View style={styles.containerLower}>
-        <Text style={styles.text}>Profile</Text>
+        <Text style={[styles.text, {fontFamily:'Poppins-SemiBold'}]}>Profile</Text>
       </View >
       <View style={styles.cardtotal} >
         <Image source={{ uri: url }} style={styles.profileImage} />

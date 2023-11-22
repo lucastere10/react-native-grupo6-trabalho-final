@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
     },
     containerCard:{
         marginTop:20,
+        flexDirection: 'row',
         justifyContent:'center',
         alignItems:"center"
     },
@@ -36,14 +37,12 @@ export const styles = StyleSheet.create({
         gap:20
     },
     text:{
-        fontWeight:'bold',
         fontSize:20,
         color:'#3F3335',
-        textDecorationLine:'underline'
+        textDecorationLine:'underline',
     },
     title:{
         fontSize:18,
-        fontWeight:"bold",
         color:'#3F3335',
         textDecorationLine:"underline"
     }

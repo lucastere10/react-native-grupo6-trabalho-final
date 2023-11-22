@@ -20,7 +20,7 @@ export const Category = ({navigation}) => {
         <Image style={{ marginTop: 30 }} source={require("../../assets/images/ShoinLogo.png")}></Image>
       </View>
       <View style={styles.containerLower}>
-        <Text style={styles.text}>Categorias</Text>
+        <Text style={[styles.text, {fontFamily:'Poppins-SemiBold'}]}>Categorias</Text>
       </View>
       <FlatList
                 data={data}

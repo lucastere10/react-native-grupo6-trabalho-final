@@ -56,14 +56,14 @@ export const Home = ({ setAuth }) => {
         <Image style={{ marginTop: 30 }} source={require("../../assets/images/ShoinLogo.png")}></Image>
       </View>
       <View style={styles.containerLower}>
-        <Text style={styles.text}>Em Destaque</Text>
+        <Text style={[styles.text, {fontFamily:'Poppins-SemiBold'}]}>Em Destaque</Text>
       </View>
       <ScrollView>
         <View style={styles.containerCard}>
           <CardCategoriaHome item={categoryData[randomCategoryIndex]} />
         </View>
         <View style={styles.containerProducts}>
-          <Text style={styles.title}>Produtos</Text>
+          <Text style={[styles.title, {fontFamily:'Poppins-SemiBold'}]}>Produtos em Destaque</Text>
           <View style={{ flexDirection: 'row', gap: 10 }}>
             <CardProdutosHome
               item={productsList[randomProducts[0]]}
