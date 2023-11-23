@@ -25,7 +25,7 @@ export const Category = ({navigation}) => {
       <FlatList
                 data={data}
                 keyExtractor={(item, index) => index.toString()}
-                renderItem={({ item }) => <CardCategoria item={item} navigation={navigation} />}
+                renderItem={({ item, index }) => <CardCategoria item={item} navigation={navigation} index={index} />}
                 contentContainerStyle={{ 
                   paddingBottom: 190, 
                   paddingTop:20,

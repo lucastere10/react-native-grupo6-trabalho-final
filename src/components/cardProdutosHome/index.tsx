@@ -31,8 +31,11 @@ export const CardProdutosHome = ({ item, setIsModalVisible, setSelectedId }: pro
                     source={{ uri: item !== undefined ? item.thumbnail : 'Loading...' }}
                 />
                 <View style={styles.info}>
-                    <Text style={[styles.title, {fontFamily:'Poppins-Regular'}]}>
+                    <Text style={[styles.title, {fontFamily:'Poppins-Bold'}]} numberOfLines={1}>
                         {item !== undefined ? item.title : 'Loading...'}
+                    </Text>
+                    <Text style={[styles.title, {fontFamily:'Poppins-Regular'}]} numberOfLines={1}>
+                        ${item !== undefined ? item.price : 'Loading...'}
                     </Text>
                 </View>
             </View>

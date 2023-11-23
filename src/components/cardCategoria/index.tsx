@@ -1,15 +1,41 @@
-import { View, TouchableOpacity,Text } from 'react-native';
+import { View, TouchableOpacity,Text, ImageBackground } from 'react-native';
 import { styles } from './style';
 
-export const CardCategoria = ({ item, navigation }) => {
+const images = [
+    require('../../assets/images/background1.jpg'),
+    require('../../assets/images/background2.jpg'),
+    require('../../assets/images/background3.jpg'),
+    require('../../assets/images/background4.jpg'),
+    require('../../assets/images/background5.jpg'),
+    require('../../assets/images/background6.jpg'),
+    require('../../assets/images/background7.jpg'),
+    require('../../assets/images/background8.jpg'),
+    require('../../assets/images/background9.jpg'),
+    require('../../assets/images/background10.jpg'),
+    require('../../assets/images/background11.jpg'),
+    require('../../assets/images/background12.jpg'),
+    require('../../assets/images/background13.jpg'),
+    require('../../assets/images/background14.jpg'),
+    require('../../assets/images/background15.jpg'),
+    require('../../assets/images/background16.jpg'),
+    require('../../assets/images/background17.jpg'),
+    require('../../assets/images/background18.jpg'),
+    require('../../assets/images/background19.jpg'),
+    require('../../assets/images/background20.jpg'),
+];
+
+export const CardCategoria = ({ item, navigation, index }) => {
+    // Substitua 'image' pela imagem de fundo que você deseja usar
+    const image = images[index % images.length];
+
     return (
         <TouchableOpacity onPress={() => {
             navigation.navigate('Products', { categoria:item });
           }}>
             <View style={{ flexDirection: 'row', justifyContent:'center' }}>
-                <View style={styles.card}>
+                <ImageBackground source={image} style={styles.card}>
                     <Text style={[styles.title,{fontFamily:'BebasNeue-Regular'}]}>{ item }</Text>
-                </View>
+                </ImageBackground>
             </View>
         </TouchableOpacity>
     )

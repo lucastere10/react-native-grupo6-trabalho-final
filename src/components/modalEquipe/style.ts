@@ -4,8 +4,8 @@ export const styles = StyleSheet.create({
 
     conteiner: {
         width: 320,
-        height: 400,
-        backgroundColor: '#4F392B',
+        height: 340,
+        backgroundColor: '#17181C',
         padding: 16,
         borderRadius: 15
         
@@ -13,9 +13,10 @@ export const styles = StyleSheet.create({
 
     titulo: {
         color: '#fff',
-        fontSize: 40,
+        fontSize: 36,
         marginBottom: 50,
-        marginTop: 15
+        marginTop: 10,
+        textDecorationLine:'underline'
     },
 
     texto: {
@@ -26,8 +27,7 @@ export const styles = StyleSheet.create({
     conteinerRow: {
         flexDirection: 'row',
         alignItems: 'center',
-        gap: 6,
-        padding: 8
+        justifyContent:'space-between',
     }
 
 })
