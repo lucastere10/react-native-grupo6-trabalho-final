@@ -23,7 +23,6 @@ export const styles = StyleSheet.create({
         
     },
     text:{
-        fontWeight:'bold',
         fontSize:20,
         color:'#3F3335',
         textDecorationLine:'underline'

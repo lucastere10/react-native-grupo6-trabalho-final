@@ -37,7 +37,6 @@ export const styles = StyleSheet.create({
         gap:20
     },
     text:{
-        fontWeight:'bold',
         fontSize:20,
         color:'#3F3335',
         textDecorationLine:'underline'
@@ -82,7 +81,6 @@ export const styles = StyleSheet.create({
         color: '#3F3335', 
       },
     logout:{
-        backgroundColor:'#3F3335',
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'center',
@@ -96,6 +94,5 @@ export const styles = StyleSheet.create({
         color:'#FFFFFF',
         fontSize:20,
     }
-
     
 });
