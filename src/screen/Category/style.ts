@@ -20,10 +20,8 @@ export const styles = StyleSheet.create({
     containerCards:{
         justifyContent:'center',
         alignItems:'center',
-        
     },
     text:{
-        fontWeight:'bold',
         fontSize:20,
         color:'#3F3335',
         textDecorationLine:'underline'
