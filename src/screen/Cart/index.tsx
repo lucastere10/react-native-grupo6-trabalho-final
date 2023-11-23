@@ -15,7 +15,7 @@ export const Cart = ({ setAuth }) => {
         <Image style={{ marginTop: 30 }} source={require('../../assets/images/ShoinLogo.png')} />
       </View>
       <View style={styles.containerLower}>
-        <Text style={[styles.text, { fontFamily: 'Poppins-SemiBold' }]}>Purchase</Text>
+        <Text style={[styles.text, { fontFamily: 'Poppins-SemiBold' }]}>Carrinho</Text>
       </View >
       <View style={styles.containerPrice}>
         <View style={{flexDirection:'row'}}>
@@ -23,8 +23,8 @@ export const Cart = ({ setAuth }) => {
           <Text style={[styles.priceText,{fontFamily: 'Poppins-SemiBold', color:'#CF6615'}]}>${precoTotal}</Text>
         </View>
         <TouchableOpacity style={styles.removeAllButton} onPress={removeAllProductsFromCart}>
-          <MaterialCommunityIcons name="cart-remove" size={20} color="white" />
-          <Text style={[styles.removeAllText, { fontFamily: 'Poppins-SemiBold' }]} >Remove All</Text>
+          <MaterialCommunityIcons name="cart-remove" size={18} color="white" />
+          <Text style={[styles.removeAllText, { fontFamily: 'Poppins-SemiBold' }]} >Remover Tudo</Text>
         </TouchableOpacity>
       </View>
       <View style={styles.containerCard}>

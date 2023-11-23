@@ -29,9 +29,11 @@ export const CardCarrinho = ({ item }: productProps) => {
             <View style={styles.produto}>
                 <Image source={{ uri: item.thumbnail }} style={styles.image} />
                 <View style={styles.info}>
+                    <View style={{width:200}}>
                     <Text style={[styles.title, { fontFamily: 'Poppins-Bold' }]} numberOfLines={1}>
                         {item !== undefined ? `${item.title}` : 'Loading...'}
                     </Text>
+                    </View>
                     <Text style={[styles.price, { fontFamily: 'Poppins-Regular' }]}>
                         ${item !== undefined ? `${item.price}` : 'Loading...'}
                     </Text>

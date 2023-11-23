@@ -17,7 +17,7 @@ export const ModalEquipe = ({ isModalVisible, setIsModalVisible }: ModalEquipePr
                 visible={isModalVisible}
                 onRequestClose={() => { setIsModalVisible(false) }}>
                 <TouchableOpacity onPressOut={() => setIsModalVisible(false)} activeOpacity={1}
-                    style={{ justifyContent: 'flex-start', alignItems: 'center', flex: 1 }}
+                    style={{ justifyContent: 'flex-start', alignItems: 'center', flex: 1, backgroundColor:'rgba(0,0,0,0.5)' }}
                 >
                     <View style={styles.conteiner}>
                         <View>

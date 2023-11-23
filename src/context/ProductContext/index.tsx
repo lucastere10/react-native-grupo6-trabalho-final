@@ -80,9 +80,9 @@ export const CartProvider = ({ children }: ContextProps) => {
 		if (!productExistsInCart) {
 			setProductList([...productList, product]);
 			storeData([...productList, product]);
-			ToastAndroid.show('Product added to cart', ToastAndroid.TOP);
+			ToastAndroid.show('Produto adicionado ao carrinho', ToastAndroid.TOP);
 		} else {
-			Alert.alert('Product already in cart');
+			Alert.alert('O produto já está no carrinho');
 			console.log('Product is already in the cart');
 		}
 	}
@@ -94,12 +94,14 @@ export const CartProvider = ({ children }: ContextProps) => {
 
 		setProductList(newProductList);
 		storeData(newProductList);
+		ToastAndroid.show('Produto removido do carrinho', ToastAndroid.TOP);
+
 	}
 
 	function removeAllProductsFromCart() {
 		setProductList([]);
 		storeData([]);
-		Alert.alert('Removed all products from cart');
+		Alert.alert('Todos os produtos foram removidos do carrinho');
 	}
 
 	return (

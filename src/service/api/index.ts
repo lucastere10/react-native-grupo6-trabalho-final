@@ -37,7 +37,7 @@ export function getProductList(category): Promise<AxiosResponse<getProductListRe
 	return api.get(url)
 		.then(response => {
 			// console.log(response.data);
-			console.log(url);
+			// console.log(url);
 			return response;
 		});
 }

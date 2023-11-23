@@ -52,7 +52,7 @@ export const styles = StyleSheet.create({
     },
     removeAllText:{
         color:'#FFFFFF',
-        fontSize:16,
+        fontSize:14,
     }
     
 });

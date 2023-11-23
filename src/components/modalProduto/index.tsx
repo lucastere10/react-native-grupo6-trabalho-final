@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { View, Text, TouchableOpacity, Modal, ActivityIndicator, ScrollView, Image, Button } from 'react-native';
+import { View, Text, TouchableOpacity, Modal, ActivityIndicator, Image } from 'react-native';
 import { getProductDetails, getProductResponse } from '../../service/api';
 import { styles } from './style';
 import { Entypo, MaterialIcons, AntDesign } from '@expo/vector-icons';
@@ -28,7 +28,7 @@ export const ModalProduto = ({ isModalVisible, setIsModalVisible, id, cart }: Mo
 		stock: null,
 
 	})
-	const { addProductToCart, removeProductFromCart } = useContext(CartContext);
+	const { addProductToCart } = useContext(CartContext);
 
 	useEffect(() => {
 		writeProductDetails(id)

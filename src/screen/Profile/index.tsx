@@ -39,16 +39,16 @@ export const Profile = ({ setAuth }) => {
         <Image style={{ marginTop: 30 }} source={require('../../assets/images/ShoinLogo.png')} />
       </View>
       <View style={styles.containerLower}>
-        <Text style={[styles.text, { fontFamily: 'Poppins-SemiBold' }]}>Profile</Text>
+        <Text style={[styles.text, { fontFamily: 'Poppins-SemiBold' }]}>Perfil</Text>
       </View >
       <View style={styles.cardtotal} >
         <Image source={{ uri: url }} style={styles.profileImage} />
       </View>
       <View style={styles.cardcontainer}>
-        <Text style={styles.text2}><Text style={styles.boldText}>First Name: </Text> {firstname}</Text>
-        <Text style={styles.text2}><Text style={styles.boldText}>Second Name: </Text> {secondname}</Text>
+        <Text style={styles.text2}><Text style={styles.boldText}>Nome: </Text> {firstname}</Text>
+        <Text style={styles.text2}><Text style={styles.boldText}>Sobrenome: </Text> {secondname}</Text>
         <Text style={styles.text2}><Text style={styles.boldText}>E-Mail: </Text>{email}</Text>
-        <Text style={styles.text2}><Text style={styles.boldText}>User: </Text>{usuario}</Text>
+        <Text style={styles.text2}><Text style={styles.boldText}>Usuário: </Text>{usuario}</Text>
         <View style={{flexDirection:'row', gap:12}}>
           <TouchableOpacity onPress={() => logout(setAuth)}>
             <View style={[styles.logout, { backgroundColor: '#3F3335', }]}>

@@ -12,9 +12,10 @@ export const Products = ({ route }) => {
 	const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
 	const [selectedId, setSelectedId] = useState<number>(null);
 	const { categoria } = route.params;
-	console.log(`categoria dos produtos: ${categoria}`)
 	const [productsList, setProductsList] = useState<productsListProps[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(true);
+	// console.log(`categoria dos produtos: ${categoria}`)
+
 
 	useEffect(() => {
 		listProductsList();
@@ -58,7 +59,7 @@ export const Products = ({ route }) => {
 					<FlatList
 						data={productsList}
 						renderItem={({ item }) => {
-							console.log(`${item}`);
+							// console.log(`${item.title}`);
 							return <CardProdutos 
 								item={item}  
 								setIsModalVisible={setIsModalVisible}

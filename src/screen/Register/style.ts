@@ -18,17 +18,22 @@ export const styles = StyleSheet.create({
     color: '#fff'
   },
   input: {
-    width: 350,
+    width: '85%',
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     marginVertical: 5,
-    paddingHorizontal: 10,
+    paddingHorizontal: 18,
     borderRadius: 30,
     backgroundColor: '#E7DCDA',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
     flexDirection: 'row',
     alignItems: 'center'
+  },
+  inputText:{
+      fontSize:16,
+      textAlign: 'center', 
+      width: '100%', 
   },
   Botao:{
     paddingHorizontal: 24,

@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
     container: {
         marginVertical: 16,
         flexDirection: 'row',
-        width:"83%",
+        width:370,
         height: 60,
         alignItems: 'center',
         alignSelf:'center',
@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
     },
     title: {
         fontSize: 16,
+        overflow:'hidden'
     },
     price: {
         fontSize: 12

@@ -43,9 +43,9 @@ export const TabRoutes = ({ setAuth }) => {
                                     justifyContent: "center",
                                     alignItems: "center",
                                     borderTopWidth: focused ? 4 : 0,
-                                    borderTopColor: "#B2CDB3"
+                                    borderTopColor: "#4EB954"
                                 }}>
-                                    <FontAwesome name="home" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
+                                    <FontAwesome name="home" size={32} color={focused ? "#4EB954" : "#E7DCDA"} />
                                 </View>
                             )
                         }}
@@ -63,9 +63,9 @@ export const TabRoutes = ({ setAuth }) => {
                                     justifyContent: "center",
                                     alignItems: "center",
                                     borderTopWidth: focused ? 4 : 0,
-                                    borderTopColor: "#B2CDB3"
+                                    borderTopColor: "#4EB954"
                                 }}>
-                                    <Entypo name="list" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
+                                    <Entypo name="list" size={32} color={focused ? "#4EB954" : "#E7DCDA"} />
                                 </View>),
                         }}
                     />
@@ -79,9 +79,9 @@ export const TabRoutes = ({ setAuth }) => {
                                     justifyContent: "center",
                                     alignItems: "center",
                                     borderTopWidth: focused ? 4 : 0,
-                                    borderTopColor: "#B2CDB3"
+                                    borderTopColor: "#4EB954"
                                 }}>
-                                    <Ionicons name="person" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
+                                    <Ionicons name="person" size={32} color={focused ? "#4EB954" : "#E7DCDA"} />
                                 </View>
                             )
                         }}
@@ -99,9 +99,9 @@ export const TabRoutes = ({ setAuth }) => {
                                     justifyContent: "center",
                                     alignItems: "center",
                                     borderTopWidth: focused ? 4 : 0,
-                                    borderTopColor: "#B2CDB3"
+                                    borderTopColor: "#4EB954"
                                 }}>
-                                    <MaterialIcons name="add-shopping-cart" size={32} color={focused ? "#B2CDB3" : "#E7DCDA"} />
+                                    <MaterialIcons name="add-shopping-cart" size={32} color={focused ? "#4EB954" : "#E7DCDA"} />
                                 </View>),
                         }}
                     />

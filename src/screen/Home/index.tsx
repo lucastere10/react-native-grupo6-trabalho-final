@@ -3,49 +3,65 @@ import { styles } from "./style"
 import { CardCategoriaHome } from "../../components/cardCategoriaHome"
 import { CardEstacoes } from "../../components/cardEstacoes"
 import { CardProdutosHome, productsListProps } from "../../components/cardProdutosHome"
-import { logout } from "../../context/authContext"
 import React, { useEffect, useState } from "react"
 import { getAllProductList, getCategoriesList } from "../../service/api"
-import { useFocusEffect } from "@react-navigation/native"
 import { ModalProduto } from "../../components/modalProduto"
 import { ModalEquipe } from "../../components/modalEquipe"
 import { ModalEmpresa } from "../../components/modalEmpresa"
 
 export const Home = ({ setAuth }) => {
 
-  //pegar valores das categorias
-  const randomCategoryIndex = Math.floor(Math.random() * 20)  //gerar valor aleatorio entre 0 e 19 para categoria
+  //CARD CATEGORIA LOUCURA DO LUCAS FICA MUDANDO IGUAL MÁGICA
+  //PARECE O BOTAFOGO DO CASTRO NO PRIMEIRO SEMESTRE
+  //seriao agora, basicamente ele seta um valor aleatorio entre 0 e 19 a cada 5000 milisegundos
+  // precisou setar em useState se nao ele mudava a cada atualização
+  const [randomCategoryIndex, setRandomCategoryIndex] = useState(null);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setRandomCategoryIndex(Math.floor(Math.random() * 20));
+    }, 5000);
+    // essa parte aqui é só pra limpar o intervalo
+    return () => clearInterval(interval);
+  }, []);
+
+  //GERAR E GUARDAR ID DE PRODUTOS PRA ESSA MERDA NAO ATUALIZAR A CADA CLIQUE
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  // agora sim, categoria, setar valores, etc, bla bla bla
   const [categoryData, setCategoryData] = useState([]);
   useEffect(() => {
     getCategoriesList().then(response => setCategoryData(response.data));
-    console.log(categoryData[randomCategoryIndex])
+    // console.log(categoryData[randomCategoryIndex])
   }, []);
 
   //montar a porra do modal
   const [isModalVisible, setIsModalVisible] = useState<boolean>(false);
-	const [selectedId, setSelectedId] = useState<number>(null);
+  const [selectedId, setSelectedId] = useState<number>(null);
 
   //montar a porra do modal de equipe
   const [isTeamModalVisible, setIsTeamModalVisible] = useState<boolean>(false);
   const [isEmpresaModalVisible, setIsEmpresaModalVisible] = useState<boolean>(false);
 
-  //pegar produtos
+  //pegar a porra dos produtos
   const [productsList, setProductsList] = useState<productsListProps[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);  // não faço ideia do que eu fiz aqui
 
-  //GERAR E GUARDAR ID DE PRODUTOS PRA ESSA MERDA NAO ATUALIZAR A CADA CLIQUE
-  const [randomProducts, setRandomProducts] = useState([]);
+  //gerar valores aleatórios sem repetição para listar os produtos na Home
+  function generateUniqueRandomNumbers(num, min, max) {
+    let arr = [];
+    while (arr.length < num) {
+      let r = Math.floor(Math.random() * max) + min;
+      if (arr.indexOf(r) === -1) arr.push(r);
+    }
+    return arr;
+  }
 
-  useEffect(() => {
-    listProductsList();
-  }, []);
+  //puxar produtos e listar
   function listProductsList() {
     getAllProductList()
       .then(response => {
         setProductsList(response.data.products);
-        // console.log(productsList)
-        // 
-        const newRandomProducts = Array.from({ length: 12 }, () => [Math.floor(Math.random() * 30)]);
+        const newRandomProducts = generateUniqueRandomNumbers(12, 0, 29);
         setRandomProducts(newRandomProducts);
       })
       .catch(error => {
@@ -56,20 +72,25 @@ export const Home = ({ setAuth }) => {
       })
   }
 
+  // useEffect para guardar os valores e evitar que fiquem atualizando
+  useEffect(() => {
+    listProductsList();
+  }, []);
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.containerUpper}>
         <Image style={{ marginTop: 30 }} source={require("../../assets/images/ShoinLogo.png")}></Image>
       </View>
       <View style={styles.containerLower}>
-        <Text style={[styles.text, {fontFamily:'Poppins-SemiBold'}]}>Em Destaque</Text>
+        <Text style={[styles.text, { fontFamily: 'Poppins-SemiBold' }]}>Em Destaque</Text>
       </View>
       <ScrollView>
         <View style={styles.containerCard}>
           <CardCategoriaHome item={categoryData[randomCategoryIndex]} index={randomCategoryIndex} />
         </View>
         <View style={styles.containerProducts}>
-          <Text style={[styles.title, {fontFamily:'Poppins-SemiBold'}]}>Produtos em Destaque</Text>
+          <Text style={[styles.title, { fontFamily: 'Poppins-SemiBold' }]}>Produtos em Destaque</Text>
           <View style={{ flexDirection: 'row', gap: 10 }}>
             <CardProdutosHome
               item={productsList[randomProducts[0]]}
@@ -140,14 +161,14 @@ export const Home = ({ setAuth }) => {
           </View>
         </View>
         <View style={styles.containerLowerCard}>
-          <CardEstacoes setIsModalVisible={setIsTeamModalVisible} titulo={"NOSSA EQUIPE"} cor={'#D1B8A4'}/>
-          <CardEstacoes setIsModalVisible={setIsEmpresaModalVisible} titulo={"NOSSA EMPRESA"} cor={'#7E8F7F'}/>
+          <CardEstacoes setIsModalVisible={setIsTeamModalVisible} titulo={"NOSSA EQUIPE"} cor={'#D1B8A4'} />
+          <CardEstacoes setIsModalVisible={setIsEmpresaModalVisible} titulo={"NOSSA EMPRESA"} cor={'#7E8F7F'} />
         </View>
         <View style={{ marginBottom: 40 }}></View>
       </ScrollView>
       {isModalVisible && <ModalProduto id={selectedId} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />}
-      {isTeamModalVisible && <ModalEquipe isModalVisible={isTeamModalVisible} setIsModalVisible={setIsTeamModalVisible}/>}
-      {isEmpresaModalVisible && <ModalEmpresa isModalVisible={isEmpresaModalVisible} setIsModalVisible={setIsEmpresaModalVisible}/>}
+      {isTeamModalVisible && <ModalEquipe isModalVisible={isTeamModalVisible} setIsModalVisible={setIsTeamModalVisible} />}
+      {isEmpresaModalVisible && <ModalEmpresa isModalVisible={isEmpresaModalVisible} setIsModalVisible={setIsEmpresaModalVisible} />}
     </SafeAreaView>
   )
 }

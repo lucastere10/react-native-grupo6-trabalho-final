@@ -12,23 +12,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input: {
-    width: 350,
+    width: '85%',
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     marginVertical: 5,
-    paddingHorizontal: 10,
+    paddingHorizontal: 16,
     borderRadius: 30,
     backgroundColor: '#E7DCDA',
+    justifyContent: 'space-evenly',
     flexDirection: 'row',
-    alignItems: 'center',
-    position: 'relative'
+    alignItems: 'center'
   },
   inputText: {
-    flex: 1,
-    marginLeft: 10,
-    textAlign: 'center',
-    borderWidth: 0
+    textAlign: 'center', 
+    width: '100%', 
+    paddingLeft: 30, 
+    paddingRight: 30, 
   },
   Botao: {
     paddingHorizontal: 24,
@@ -52,10 +52,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 10, 
   },
-  icon: {
-    position: 'absolute',
-    left: 10
-  }
 });
 
 export default styles;
