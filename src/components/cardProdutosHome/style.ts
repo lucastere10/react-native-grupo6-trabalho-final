@@ -7,10 +7,12 @@ export const styles = StyleSheet.create({
         height:170
     },
     info:{
-        fontSize:5,
+        fontSize:8,
         width:110,
-        height:29,
-        backgroundColor:'#D9D9D9'
+        height:45,
+        backgroundColor:'#D9D9D9',
+        paddingHorizontal:8,
+        paddingVertical:4
     },
     Image:{
         width:110,
@@ -18,6 +20,10 @@ export const styles = StyleSheet.create({
     },
     title:{
         fontSize:12,
+        overflow:'hidden'
+    },
+    text:{
+        fontSize:10,
         overflow:'hidden'
     }
 

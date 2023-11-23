@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
         width: '95%',
         height: 117,
         borderRadius: 10,
-        backgroundColor: '#D1B8A4',
+        backgroundColor: '#17181C',
         padding: 17,
         justifyContent: 'flex-end'
     },

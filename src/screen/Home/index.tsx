@@ -66,7 +66,7 @@ export const Home = ({ setAuth }) => {
       </View>
       <ScrollView>
         <View style={styles.containerCard}>
-          <CardCategoriaHome item={categoryData[randomCategoryIndex]} />
+          <CardCategoriaHome item={categoryData[randomCategoryIndex]} index={randomCategoryIndex} />
         </View>
         <View style={styles.containerProducts}>
           <Text style={[styles.title, {fontFamily:'Poppins-SemiBold'}]}>Produtos em Destaque</Text>
@@ -143,7 +143,7 @@ export const Home = ({ setAuth }) => {
           <CardEstacoes setIsModalVisible={setIsTeamModalVisible} titulo={"NOSSA EQUIPE"} cor={'#D1B8A4'}/>
           <CardEstacoes setIsModalVisible={setIsEmpresaModalVisible} titulo={"NOSSA EMPRESA"} cor={'#7E8F7F'}/>
         </View>
-        <View style={{ marginBottom: 80 }}></View>
+        <View style={{ marginBottom: 40 }}></View>
       </ScrollView>
       {isModalVisible && <ModalProduto id={selectedId} isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible} />}
       {isTeamModalVisible && <ModalEquipe isModalVisible={isTeamModalVisible} setIsModalVisible={setIsTeamModalVisible}/>}

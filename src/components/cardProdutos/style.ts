@@ -2,38 +2,32 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        margin:18,
+        marginVertical:16,
         alignSelf: 'center',
-        borderRadius: 5,
+        borderRadius: 6,
     },
 
     produto:{
-
         justifyContent: 'center',
         alignItems: 'center',
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
     },
     info:{
-        width:300,
-        height:40,
+        padding:8,
         backgroundColor:'#D9D9D9',
-        borderBottomLeftRadius: 10,
-        borderBottomRightRadius: 10,
+        maxWidth:280
     },
     image: {
-        width: 300, 
+        width: 280, 
         height: 160, 
-        aspectRatio: 16 / 9, 
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10, 
     },
     title: {
-        fontSize: 16,
-        marginTop: 12,
-        marginLeft: 10,
+        fontSize: 16,   
     },
     brand: {
-        fontStyle: 'italic',
+        fontSize:12
     }
 })

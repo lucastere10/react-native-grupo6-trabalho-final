@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     conteiner: {
         width: 320,
         height: 500,
-        backgroundColor: '#4F392B',
+        backgroundColor: '#17181C',
         padding: 16,
         borderRadius: 15
         
@@ -15,7 +15,9 @@ export const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 30,
         marginBottom: 10,
-        marginTop: 15
+        marginTop: 15,
+        textDecorationLine:'underline'
+
     },
 
     texto: {
